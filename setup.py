@@ -24,6 +24,13 @@ setup(
         "hello": ["*.msg"],
     },
 
+    entry_points="""
+        [console_scripts]
+        test_me=PyGaza.scripts.test:test_me
+        
+    """,
+
+
     # metadata to display on PyPI
     author="Aboud",
     author_email="aboud@gmail.com",
@@ -38,15 +45,10 @@ setup(
     classifiers=[
         "License :: MIT :: Python Software License"
 
-
-    entry_points="""
-        [console_scripts]
-        test_me=PyGaza.scripts.test:test_me
-        # yourscript=yourpackage.scripts.yourscript:cli
-    """,
-
     ]
 
+    
 
     # could also include long_description, download_url, etc.
+    
 )
