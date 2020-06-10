@@ -1,1 +1,0 @@
-# Exploit Title: WebSocket SQL Injection Password Disclosure 

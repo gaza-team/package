@@ -3,15 +3,19 @@ from setuptools import setup, find_packages
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
+
+
 setup(
     name="PyGaza",
     version="0.1",
     packages=find_packages(),
+    include_package_data=True,
     scripts=["pylogin.py"],
 
-    # Project uses reStructuredText, so ensure that the docutils get
-    # installed or upgraded on the target machine
-    install_requires=["docutils>=0.3"],
+    install_requires=required,
 
     package_data={
         #SIf any package contains *.txt or *.rst files, include them:
@@ -33,8 +37,16 @@ setup(
     },
     classifiers=[
         "License :: MIT :: Python Software License"
+
+
+    entry_points="""
+        [console_scripts]
+        test_me=PyGaza.scripts.test:test_me
+        # yourscript=yourpackage.scripts.yourscript:cli
+    """,
+
     ]
 
-    
+
     # could also include long_description, download_url, etc.
 )
